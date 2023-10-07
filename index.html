@@ -1,0 +1,53 @@
+<html>
+
+<body>
+  <img src="otto.png" alt="Otto" width="80" height="80">
+
+
+  <input type="text" id="jiraUrl" placeholder="https://yourjiraurl.atlassian.com" class="input" />
+
+  <button
+    id="saveJiraUrl"
+    class="submit"
+  >
+    Save
+  </button>
+  <div id="saved"></div>
+  <script src="js/main.js"> </script>
+</body>
+
+<style>
+
+body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:200px;
+}
+
+.input{
+  width:100%;
+  border-radius:5px;
+  border:1px solid #ccc;
+  padding:10px;
+  font-size:12px;
+  margin-bottom:2px;
+}
+
+  .submit {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:5px;
+    width:100%;
+}
+</style>
+
+</html>
