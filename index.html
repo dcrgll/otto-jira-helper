@@ -1,7 +1,7 @@
 <html>
 
 <body>
-  <img src="otto.png" alt="Otto" width="80" height="80">
+  <img src="img/128.png" alt="Otto" width="80" height="80">
 
 
   <input type="text" id="jiraUrl" placeholder="https://yourjiraurl.atlassian.com" class="input" />
@@ -17,7 +17,6 @@
 </body>
 
 <style>
-
 body {
   display:flex;
   flex-direction:column;
@@ -25,6 +24,7 @@ body {
   justify-content:center;
   gap:5px;
   width:200px;
+  padding:8px;
 }
 
 .input{
@@ -37,7 +37,7 @@ body {
 }
 
   .submit {
-    background-color: #4CAF50;
+    background-color: #000;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -48,6 +48,11 @@ body {
     border-radius:5px;
     width:100%;
 }
+
+  .submit:hover{
+  background-color:#333;
+  cursor:pointer;
+  }
 </style>
 
 </html>

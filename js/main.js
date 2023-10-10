@@ -14,12 +14,23 @@ function start() {
   // add event listener to button
 
   button.addEventListener('click', (e) => {
-    console.log('button clicked');
-
     // get url from input
     const input = document.querySelector('input');
 
     setBaseUrl(input.value);
+
+    chrome.storage.local
+      .get(['OTTO_JIRA_BASE_URL'])
+      .then((result) => {
+        // get saved div and add url to it
+        const saved = document.querySelector('#saved');
+
+        if (!result.OTTO_JIRA_BASE_URL) {
+          saved.innerHTML = 'No URL saved';
+          return;
+        }
+        saved.innerHTML = result.OTTO_JIRA_BASE_URL;
+      });
   });
 
   if (chrome.storage.local.get(['OTTO_JIRA_BASE_URL'])) {
@@ -28,6 +39,11 @@ function start() {
       .then((result) => {
         // get saved div and add url to it
         const saved = document.querySelector('#saved');
+
+        if (!result.OTTO_JIRA_BASE_URL) {
+          saved.innerHTML = 'No URL saved';
+          return;
+        }
         saved.innerHTML = result.OTTO_JIRA_BASE_URL;
       });
   }
